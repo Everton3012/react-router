@@ -1,7 +1,8 @@
+
+import Routes from './routes';
+
 export default function App() {
-  return (
-    <>
-      <h1>Rotas com React</h1>
-    </>
-  )
+ return (
+     <Routes/>
+ );
 }
