@@ -1,5 +1,5 @@
 
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import Contato from './pages/Contato';
@@ -8,19 +8,20 @@ import Error from './pages/Error';
 
 import Header from './components/Header';
 
-const Routes = () => {
+const routes = () => {
   return(
     <BrowserRouter>
       <Header/>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/sobre" component={Sobre} />
-        <Route exact path="/contato" component={Contato} />
-        <Route exact path="/produto/:id" component={Produto} />
-        <Route path='*' component={Error}/>
-      </Switch>
+      <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/sobre" element={<Sobre/>} />
+          <Route exact path="/contato" element={<Contato/>} />
+          <Route exact path="/produto/:id" element={<Produto/>} />
+          <Route path='*' element={<Error/>}/>
+        </Routes>
+
     </BrowserRouter>
   )
 }
 
-export default Routes;
+export default routes;
